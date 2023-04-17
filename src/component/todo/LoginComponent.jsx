@@ -5,7 +5,7 @@ import { useAuth } from "./security/AuthContext";
 function LoginComponent() {
   const [username, setUsername] = useState("username");
   const [password, setPassword] = useState("");
-  const [showSuccessMessage, setShowSuccessMessage] = useState(false);
+  const [showSuccessMessage] = useState(false);
   const [showErrorMessage, setShowErrorMessage] = useState(false);
   const navigate = useNavigate();
   const authContext = useAuth();
@@ -19,20 +19,13 @@ function LoginComponent() {
   }
 
   function handleSubmit() {
-    if (username === "username" && password === "dummy") {
-      authContext.setAuthenticated(true);
-      console.log("Success");
-      setShowSuccessMessage(true);
-      setShowErrorMessage(false);
+    if (authContext.login(username, password)) {
+      //NEW
       navigate(`/welcome/${username}`);
     } else {
-      authContext.setAuthenticated(false);
-      console.log("Failed");
-      setShowSuccessMessage(false);
       setShowErrorMessage(true);
     }
   }
-
   return (
     <div className="Login d-flex justify-content-center ">
       <div className="LoginForm form w-25  mt-5 ">

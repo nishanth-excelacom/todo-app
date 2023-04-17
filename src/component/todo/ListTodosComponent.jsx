@@ -29,7 +29,7 @@ function ListTodosComponent() {
               <td>Description</td>
               <td>Is Done?</td>
               <td>Target Date</td>
-            </tr> 
+            </tr>
           </thead>
           <tbody>
             {todos.map((todo) => (

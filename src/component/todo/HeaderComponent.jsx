@@ -6,7 +6,7 @@ function HeaderComponent() {
   const isAuthenticated = authContext.isAuthenticated;
 
   function logout() {
-    authContext.setAuthenticated(false);
+    authContext.logout();
   }
 
   return (
@@ -14,14 +14,17 @@ function HeaderComponent() {
       <div className="container">
         <div className="row">
           <nav className="navbar navbar-expand-lg">
-            <a className="navbar-brand ms-2 fs-2 fw-bold text-black" href="">
+            <a
+              className="navbar-brand ms-2 fs-2 fw-bold text-black"
+              href="/login"
+            >
               LoGo
             </a>
             <div className="collapse navbar-collapse">
               <ul className="navbar-nav">
                 <li className="nav-item">
                   {isAuthenticated && (
-                    <Link className="nav-link" to="/welcome/in28minutes">
+                    <Link className="nav-link" to="/welcome/User">
                       Home
                     </Link>
                   )}

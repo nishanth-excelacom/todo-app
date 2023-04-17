@@ -14,5 +14,4 @@ function WelcomeComponent() {
   );
 }
 
-
 export default WelcomeComponent;
