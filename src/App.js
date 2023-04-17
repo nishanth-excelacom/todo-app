@@ -1,12 +1,10 @@
-// import logo from './logo.svg';
 import "./App.css";
-import Counter from "./component/counter/Counter";
-// import FirstComponent from "./component/learing-examples/FirstComponent";
+import TodoApp from "./component/todo/TodoApp";
 
 function App() {
   return (
-    <Counter />
-  );
+      <TodoApp/>
+    );
 }
 
 
